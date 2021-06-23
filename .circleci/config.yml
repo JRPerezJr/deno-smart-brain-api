@@ -4,9 +4,6 @@ orbs:
 workflows:
   push:
     jobs:
-      - folder
-      - run:
-          command: cd client
       - react/install
       - react/eslint:
           requires:
