@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { createBrowserHistory } from 'history';
+import { Router, Route, Switch } from 'react-router-dom';
+
+import LandingPage from './views/LandingPage/LandingPage.js';
+
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+let hist = createBrowserHistory();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router history={hist}>
+      <Switch>
+        <Route path="/" component={LandingPage} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
